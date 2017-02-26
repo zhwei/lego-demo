@@ -12,5 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect(route('demo', 'city-list'));
 });
+
+Route::any('/demo/{item}', 'LegoController@demo')->name('demo');

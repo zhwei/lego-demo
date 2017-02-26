@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c5841ec9357d6e52dc64445704ff67ee",
-    "content-hash": "6644e4e94db194184309d7dbd1ed8117",
+    "hash": "934b5691431b9be8677015b9c3ccc124",
+    "content-hash": "aefa44d677714d1100c4e5f7c2c91fc0",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -2150,17 +2150,12 @@
         },
         {
             "name": "wutongwan/lego",
-            "version": "0.1.16",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wutongwan/laravel-lego.git",
-                "reference": "1e8a5031a2ae2fdfe0fa9aee42ef3698c2c4e4e0"
-            },
+            "version": "dev-master",
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wutongwan/laravel-lego/zipball/1e8a5031a2ae2fdfe0fa9aee42ef3698c2c4e4e0",
-                "reference": "1e8a5031a2ae2fdfe0fa9aee42ef3698c2c4e4e0",
-                "shasum": ""
+                "type": "path",
+                "url": "/Users/zhwei/dk/laravel-lego",
+                "reference": "8de0fc455499e30f0d73c1aabc126d8031d05587",
+                "shasum": null
             },
             "require": {
                 "laravel/framework": "~5.2",
@@ -2183,7 +2178,11 @@
                     "Lego\\": "src/Lego/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "Lego\\Tests\\": "tests/"
+                }
+            },
             "license": [
                 "MIT"
             ],
@@ -2193,8 +2192,7 @@
                 "admin",
                 "crud",
                 "widget"
-            ],
-            "time": "2017-02-26 03:58:06"
+            ]
         }
     ],
     "packages-dev": [
@@ -3667,7 +3665,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "wutongwan/lego": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
