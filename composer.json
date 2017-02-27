@@ -8,7 +8,7 @@
         "php": ">=5.6.4",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
-        "wutongwan/lego": "~0.1"
+        "wutongwan/lego": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -28,6 +28,12 @@
             "Tests\\": "tests/"
         }
     },
+    "repositories": [
+        {
+            "url": "https://github.com/wutongwan/laravel-lego.git",
+            "type": "git"
+        }
+    ],
     "scripts": {
         "post-root-package-install": [
             "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
