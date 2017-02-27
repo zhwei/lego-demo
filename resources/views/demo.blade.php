@@ -17,6 +17,10 @@
 
         pre code {
             line-height: 2em;
+            /** disable like break **/
+            white-space: pre;
+            word-break: normal;
+            word-wrap: normal;
         }
     </style>
 </head>
