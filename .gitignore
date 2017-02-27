@@ -10,3 +10,5 @@ Homestead.yaml
 .env
 _ide_helper_lego.php
 composer.lock
+*.pyc
+yarn.lock
