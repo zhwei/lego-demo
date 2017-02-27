@@ -2,6 +2,10 @@
 
 Demo of [wutongwan/laravel-lego](https://github.com/wutongwan/laravel-lego)
 
+## Demo Code
+
+- [resources/demos](resources/demos)
+
 ## Initialize Environment
 
 ```bash
