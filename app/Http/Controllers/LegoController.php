@@ -13,6 +13,7 @@ class LegoController extends Controller
             'street' => 'Form：新建/编辑街道',
             'suite-list' => 'Filter & Grid：公寓列表',
             'suite' => 'Form：新建/编辑公寓',
+            'confirm' => 'Confirm：确认操作示例',
         ];
     }
 
@@ -22,16 +23,21 @@ class LegoController extends Controller
 
         $path = resource_path("demos/{$item}.php");
 
-        /** @var Widget $widget */
         $widget = require $path;
         $lines = explode("\n", file_get_contents($path));
-        $code = trim(implode("\n", array_slice($lines, 1, -2)));
+        $code = trim(implode("\n", array_slice($lines, 1)));
 
-        return $widget->view('demo', [
+        $data = [
             'title' => $this->demos()[$item],
             'widget' => $widget,
             'code' => $code,
             'demos' => $this->demos(),
-        ]);
+        ];
+
+        if ($widget instanceof Widget) {
+            return $widget->view('demo', $data);
+        } else {
+            return view('demo', $data);
+        }
     }
 }

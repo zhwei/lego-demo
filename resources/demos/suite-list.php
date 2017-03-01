@@ -26,6 +26,7 @@ $grid->add('created_at|date', '创建日期');
 $grid->addLeftTopButton('新建公寓', route('demo', 'suite'));
 
 $grid->addBatch('批量删除')
+    ->message('确认删除？')
     ->action(function (Suite $suite) {
         $suite->delete();
     });
