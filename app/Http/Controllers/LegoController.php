@@ -14,6 +14,8 @@ class LegoController extends Controller
             'suite-list' => 'Filter & Grid：公寓列表',
             'suite' => 'Form：新建/编辑公寓',
             'confirm' => 'Confirm：确认操作示例',
+            'grid-batch' => 'Grid：批处理',
+            'message' => 'Message：提示信息',
         ];
     }
 
