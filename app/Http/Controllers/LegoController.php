@@ -4,6 +4,11 @@ use Lego\Widget\Widget;
 
 class LegoController extends Controller
 {
+    function __construct()
+    {
+        view()->share('demos', $this->demos());
+    }
+
     private function demos()
     {
         return [
@@ -16,6 +21,7 @@ class LegoController extends Controller
             'confirm' => 'Confirm：确认操作示例',
             'grid-batch' => 'Grid：批处理',
             'message' => 'Message：提示信息',
+            'condition-group' => 'Form：动态添加字段',
         ];
     }
 
@@ -33,7 +39,6 @@ class LegoController extends Controller
             'title' => $this->demos()[$item],
             'widget' => $widget,
             'code' => $code,
-            'demos' => $this->demos(),
         ];
 
         if ($widget instanceof Widget) {
