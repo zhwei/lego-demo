@@ -37,7 +37,7 @@ class LegoController extends Controller
 
         $data = [
             'title' => $this->demos()[$item],
-            'widget' => (string)$widget,
+            'widget' => $widget,
             'code' => $code,
         ];
 
