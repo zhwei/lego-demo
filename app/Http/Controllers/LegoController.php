@@ -18,6 +18,7 @@ class LegoController extends Controller
             'street' => 'Form：新建/编辑街道',
             'suite-list' => 'Filter & Grid：公寓列表',
             'suite' => 'Form：新建/编辑公寓',
+            'suite-delete' => 'Confirm：删除公寓',
             'confirm' => 'Confirm：确认操作示例',
             'grid-batch' => 'Grid：批处理',
             'message' => 'Message：提示信息',

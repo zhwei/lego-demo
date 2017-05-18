@@ -4,21 +4,21 @@ use App\Suite;
 use Illuminate\Support\Facades\Input;
 use Lego\Lego;
 
-$street = Suite::findOrNew(Input::get('id'));
-
-$form = Lego::form($street);
-
-$form->addAutoComplete('street.name', '所属街道');
-$form->addText('address', '公寓地址')->unique();
-$form->addSelect('type', '公寓类型')->values(Suite::listType());
-$form->addSelect('status', '公寓状态')
-    ->options(array_combine(Suite::listStatus(), Suite::listStatus()));
+$suite = Suite::findOrNew(Input::query('id'));
+$form = Lego::form($suite);
+$form->addText('address', '地址')
+    ->unique()
+    ->required()
+    ->placeholder('地址唯一，不可重复');
+$form->addSelect('type', '类型')->values(Suite::listType());
+$form->addSelect('status', '状态')->values(Suite::listStatus());
 $form->addTextarea('note', '备注');
 
-$form->required();
-// $form->required(['street.name', 'address', ...]);
-
-
+$form->required(['type', 'status']);
 $form->success(route('demo', 'suite-list'));
+
+if ($suite->id) {
+    $form->addRightTopButton('删除', route('demo', 'suite-delete') . '?id=' . $suite->id);
+}
 
 return $form;

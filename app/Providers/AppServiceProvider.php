@@ -27,6 +27,11 @@ class AppServiceProvider extends ServiceProvider
             $this->app->register(
                 \Mpociot\LaravelTestFactoryHelper\TestFactoryHelperServiceProvider::class
             );
+
+            // reset faker's locale
+            $this->app->singleton(\Faker\Generator::class, function () {
+                return \Faker\Factory::create('zh_CN');
+            });
         }
     }
 }

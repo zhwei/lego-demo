@@ -13,7 +13,7 @@
 
 $factory->define(App\City::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->name,
+        'name' => $faker->city,
     ];
 });
 
@@ -22,7 +22,7 @@ $factory->define(App\Street::class, function (Faker\Generator $faker) {
         'city_id' => function () {
             return factory(App\City::class)->create()->id;
         },
-        'name' => $faker->name,
+        'name' => $faker->city . '路',
     ];
 });
 
@@ -32,9 +32,8 @@ $factory->define(App\Suite::class, function (Faker\Generator $faker) {
         'street_id' => function () {
             return factory(App\Street::class)->create()->id;
         },
-        'address' => $faker->address,
+        'address' => $faker->address . $faker->city . '路' . $faker->numberBetween(1, 500) . '号',
         'type' => $faker->randomElement(\App\Suite::listType()),
         'status' => $faker->randomElement(\App\Suite::listStatus()),
-        'note' => $faker->paragraph,
     ];
 });
