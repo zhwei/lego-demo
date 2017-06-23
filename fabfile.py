@@ -11,7 +11,6 @@ def deploy(update_vendor = False):
         run('git pull')
         if update_vendor:
             run('composer update -vvv')
-            run('php artisan lego:update-components --bower-allow-root')
         run('service php7.0-fpm restart')
 
 def migrate_refresh():

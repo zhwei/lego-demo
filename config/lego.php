@@ -63,5 +63,22 @@ return [
         'filter' => [
             'default-view' => 'lego::default.filter.inline',
         ],
+        /**
+         * grid's configuration
+         */
+        'grid' => [
+            /**
+             * 移动端使用定制版 view
+             */
+            'responsive' => true,
+
+            /**
+             * Pipes
+             */
+            'pipes' => [
+                \Lego\Widget\Grid\Pipes4Datetime::class,
+                \Lego\Widget\Grid\Pipes4String::class,
+            ],
+        ],
     ]
 ];

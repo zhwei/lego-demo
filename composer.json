@@ -1,14 +1,17 @@
 {
     "name": "laravel/laravel",
     "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
     "license": "MIT",
     "type": "project",
     "require": {
         "php": ">=5.6.4",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
-        "wutongwan/lego": "dev-master"
+        "wutongwan/lego": "0.1.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -29,12 +32,12 @@
             "Tests\\": "tests/"
         }
     },
-    "repositories": [
-        {
-            "url": "https://github.com/wutongwan/laravel-lego.git",
-            "type": "git"
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.laravel-china.org"
         }
-    ],
+    },
     "scripts": {
         "post-root-package-install": [
             "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
@@ -48,7 +51,8 @@
         ],
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",
-            "php artisan optimize"
+            "php artisan optimize",
+            "php artisan vendor:publish --tag=lego-assets --force"
         ]
     },
     "config": {
