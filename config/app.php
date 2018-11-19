@@ -178,6 +178,7 @@ return [
 
         Collective\Html\HtmlServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
+        Mews\Purifier\PurifierServiceProvider::class,
         Lego\LegoServiceProvider::class,
     ],
 

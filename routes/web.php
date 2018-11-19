@@ -11,8 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return redirect(route('demo', 'city'));
-});
+Route::redirect('/', '/demo/city', 301);
 
 Route::any('/demo/{item}', 'LegoController@demo')->name('demo');

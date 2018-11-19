@@ -49,6 +49,7 @@ $grid->addBatch('批量删除-动态提示信息')
 
 // 3、带表单的批处理
 $grid->addBatch('修改状态')
+    ->openInNewTab()
     ->form(function (Form $form) use ($grid) {
         $form->addSelect('status', '公寓状态')
             ->values(Suite::listStatus())

@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  php-fpm:
+    build:
+      context: .
+      dockerfile: docker/php-fpm.dockerfile
+    volumes:
+      - .:/var/www/html
+
+  nginx:
+    image: nginx
+    volumes:
+      - ./public:/var/www/html/public
+      - ./storage/logs/nginx:/var/log/nginx
+      - ./docker/lego.conf:/etc/nginx/conf.d/lego.conf
+    ports:
+      - 80
