@@ -9,18 +9,14 @@ Demo of [wutongwan/laravel-lego](https://github.com/wutongwan/laravel-lego)
 
 ## Initialize Environment
 
-```bash
-docker-compose run --rm php-fpm composer install
-cp .env.example .env
-docker-compose run --rm php-fpm php artisan key:generate
-docker-compose up -d
-```
+1. 创建 .env 文件
+2. 启动 `docker-compose up -d`
 
 
 ## Deploy
 
 ```bash
 git pull
-docker-compose run --rm php-fpm composer install
-docker-compose restart php-fpm
+docker-compose build php-fpm
+docker-compose up --no-deps -d php-fpm
 ```

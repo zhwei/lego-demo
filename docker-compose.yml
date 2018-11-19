@@ -15,4 +15,4 @@ services:
       - ./storage/logs/nginx:/var/log/nginx
       - ./docker/lego.conf:/etc/nginx/conf.d/lego.conf
     ports:
-      - 80
+      - 80:80
