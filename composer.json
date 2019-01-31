@@ -11,7 +11,7 @@
         "php": ">=7.0",
         "laravel/framework": "5.7.*",
         "laravel/tinker": "~1.0",
-        "wutongwan/lego": "0.3.15-beta"
+        "wutongwan/lego": "0.3.17"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
