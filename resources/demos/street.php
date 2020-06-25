@@ -1,10 +1,10 @@
 <?php
 
 use App\Street;
-use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Request;
 use Lego\Lego;
 
-$street = Street::findOrNew(Input::get('id'));
+$street = Street::findOrNew(Request::get('id'));
 
 $form = Lego::form($street);
 

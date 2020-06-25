@@ -1,10 +1,11 @@
 <?php
 
 use App\City;
-use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Request;
 use Lego\Lego;
 
-$city = City::findOrNew(Input::get('id'));
+
+$city = City::findOrNew(Request::get('id'));
 
 $form = Lego::form($city);
 $form->addText('name', '城市名称')

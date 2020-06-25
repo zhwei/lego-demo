@@ -12,9 +12,12 @@ $filter->addSelect('status', '公寓状态')->values(Suite::listStatus());
 $filter->addDateRange('created_at', '创建时间');
 
 $grid = Lego::grid($filter);
-$grid->add('address', '地址')->pipe(function ($address, Suite $suite) {
-    return link_to(route('demo', 'suite') . '?id=' . $suite->id, $address);
-});
+$grid->add('address', '地址')
+    ->link(route('demo', 'suite') . '?id={id}');
+// same as
+//$grid->add('address', '地址')->pipe(function ($address, Suite $suite) {
+//    return link_to(route('demo', 'suite') . '?id=' . $suite->id, $address);
+//});
 $grid->add('status', '状态');
 $grid->add('street.city.name', '城市');
 $grid->add('type', '类型');

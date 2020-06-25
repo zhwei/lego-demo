@@ -1,12 +1,25 @@
 <?php namespace App\Http\Controllers;
 
+use Illuminate\Contracts\Session\Session;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Lego\Widget\Widget;
+use Psr\Log\LoggerInterface;
 
 class LegoController extends Controller
 {
     function __construct()
     {
         view()->share('demos', $this->demos());
+
+        $this->middleware(function (Request $request, $next) {
+            Log::info('request', [
+                $request->method(),
+                $request->fullUrl(),
+                $request->all(),
+            ]);
+            return $next($request);
+        });
     }
 
     private function demos()
@@ -23,10 +36,11 @@ class LegoController extends Controller
             'grid-batch' => 'Grid：批处理',
             'message' => 'Message：提示信息',
             'condition-group' => 'Form：动态添加字段',
+            'elastic-query' => 'Filter: ES 示例',
         ];
     }
 
-    public function demo($item)
+    public function demo($item, LoggerInterface $logger, Request $request, Session $session)
     {
         abort_unless(isset($this->demos()[$item]), 404);
 

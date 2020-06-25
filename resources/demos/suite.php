@@ -1,10 +1,10 @@
 <?php
 
 use App\Suite;
-use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Request;
 use Lego\Lego;
 
-$suite = Suite::findOrNew(Input::query('id'));
+$suite = Suite::findOrNew(Request::query('id'));
 $form = Lego::form($suite);
 $form->addText('address', '地址')
     ->unique()

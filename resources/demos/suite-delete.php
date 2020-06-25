@@ -2,10 +2,10 @@
 
 
 use App\Suite;
-use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Request;
 use Lego\Lego;
 
-$id = Input::query('id');
+$id = Request::query('id');
 abort_unless($id, 404);
 
 $suite = Suite::find($id);

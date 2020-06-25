@@ -9,15 +9,16 @@
     "type": "project",
     "require": {
         "php": ">=7.0",
-        "laravel/framework": "5.7.*",
-        "laravel/tinker": "~1.0",
-        "wutongwan/lego": "0.3.17"
+        "laravel/framework": "^7.0",
+        "laravel/tinker": "@stable",
+        "ongr/elasticsearch-dsl": "^7.2",
+        "wutongwan/lego": "^1.0-beta.4"
     },
     "require-dev": {
-        "fzaninotto/faker": "~1.4",
-        "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "~5.7",
-        "mpociot/laravel-test-factory-helper": "~0.3"
+        "fzaninotto/faker": "@stable",
+        "mockery/mockery": "@stable",
+        "phpunit/phpunit": "@stable",
+        "mpociot/laravel-test-factory-helper": "@stable"
     },
     "autoload": {
         "classmap": [
