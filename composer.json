@@ -1,5 +1,5 @@
 {
-    "name": "laravel/laravel",
+    "name": "zhwei/lego-demo",
     "description": "The Laravel Framework.",
     "keywords": [
         "framework",
@@ -8,11 +8,10 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": "^7.1",
+        "php": "7.3.*",
         "ext-json": "*",
         "laravel/framework": "^7.0",
         "laravel/tinker": "@stable",
-        "ongr/elasticsearch-dsl": "^7.2",
         "wutongwan/lego": "dev-master"
     },
     "require-dev": {

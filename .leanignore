@@ -1,0 +1,7 @@
+.git/
+.DS_Store
+.avoscloud/
+.leancloud/
+vendor/
+lego/.git
+storage/data/*.json

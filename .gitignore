@@ -12,3 +12,4 @@ _ide_helper_lego.php
 .composer-cache
 *.pyc
 yarn.lock
+.leancloud
