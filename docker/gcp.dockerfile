@@ -1,9 +1,12 @@
-FROM php:7.2-fpm-alpine
+FROM php:7.3-fpm-alpine
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
 # php ext
 RUN docker-php-ext-enable opcache
+RUN apk add --no-cache libzip-dev \
+    && docker-php-ext-configure zip --with-libzip=/usr/include \
+    && docker-php-ext-install zip
 
 RUN apk add --no-cache git openssh-client composer nginx
 RUN mkdir /run/nginx && rm /etc/nginx/conf.d/default.conf

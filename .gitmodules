@@ -1,0 +1,3 @@
+[submodule "lego"]
+	path = lego
+	url = https://github.com/wutongwan/laravel-lego.git

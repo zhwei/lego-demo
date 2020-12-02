@@ -12,3 +12,9 @@ docker build . -f docker/gcp.dockerfile -t gcr.io/lego-demo/lego-demo-gcp
 ```bash
 docker push gcr.io/lego-demo/lego-demo-gcp
 ```
+
+3. 更新实例
+
+```bash
+gcloud beta compute instances update-container lego-demo-0
+```

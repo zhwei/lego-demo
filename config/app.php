@@ -176,9 +176,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        Collective\Html\HtmlServiceProvider::class,
-        Mews\Purifier\PurifierServiceProvider::class,
-        Lego\LegoServiceProvider::class,
+        Lego\Demo\DemoServiceProvider::class,
     ],
 
     /*

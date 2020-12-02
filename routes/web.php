@@ -10,7 +10,3 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::redirect('/', '/demo/city', 301);
-
-Route::any('/demo/{item}', 'LegoController@demo')->name('demo');
