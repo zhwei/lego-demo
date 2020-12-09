@@ -2,6 +2,8 @@
 .DS_Store
 .avoscloud/
 .leancloud/
-vendor/
-lego/.git
 storage/data/*.json
+storage/framework/cache/*.json
+.composer-cache
+/vendor
+/public/packages

@@ -19,6 +19,6 @@ COPY . /var/www/html
 RUN find storage -type f | xargs -n 1000 rm
 
 WORKDIR /var/www/html
-RUN composer install && chown www-data:www-data -R /var/www/html
+RUN composer install --no-dev && chown www-data:www-data -R /var/www/html
 
 ENTRYPOINT ["/start.sh"]
