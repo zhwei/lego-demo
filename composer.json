@@ -10,6 +10,7 @@
     "require": {
         "php": "7.3.*",
         "ext-json": "*",
+        "ext-pdo_sqlite": "*",
         "laravel/framework": "^7.0",
         "laravel/tinker": "@stable",
         "wutongwan/lego": "dev-master"
@@ -22,11 +23,10 @@
     },
     "autoload": {
         "classmap": [
-            "database"
         ],
         "psr-4": {
             "App\\": "app/",
-            "Lego\\Demo\\": "lego/demo/app"
+            "Lego\\Demo\\": "vendor/wutongwan/lego/demo/app"
         }
     },
     "autoload-dev": {
@@ -40,8 +40,8 @@
             "url": "https://mirrors.aliyun.com/composer/"
         },
         "lego": {
-            "type": "path",
-            "url": "./lego"
+            "type": "git",
+            "url": "https://github.com/wutongwan/laravel-lego.git"
         }
     },
     "scripts": {
@@ -53,15 +53,15 @@
         ],
         "post-install-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postInstall",
-            "php artisan vendor:publish --tag=lego-assets --force"
+            "App\\ComposerScripts::updateLegoAssets"
         ],
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",
-            "php artisan vendor:publish --tag=lego-assets --force"
+            "App\\ComposerScripts::updateLegoAssets"
         ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover"
+            "App\\ComposerScripts::postAutoloadDump"
         ]
     },
     "config": {
